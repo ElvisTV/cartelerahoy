@@ -3,8 +3,20 @@ import 'package:micartelera/providers/movies_provider.dart';
 import 'package:micartelera/screens/screens.dart';
 import 'package:provider/provider.dart';
 
+import 'dart:io';
 
-void main() => runApp(AppState());
+import 'package:admob_flutter/admob_flutter.dart';
+import 'package:flutter/material.dart';
+
+
+// void main() => runApp(AppState());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Admob.initialize();
+  runApp(const AppState());
+}
+
+
 
 class AppState extends StatelessWidget {
   const AppState({Key? key}) : super(key: key);

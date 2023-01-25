@@ -39,6 +39,7 @@ dependencies:
   flutter_swiper_view: ^1.1.8
   http: ^0.13.5
   provider: ^6.0.3
+  admob_flutter: ^3.0.0
 
 dev_dependencies:
   flutter_test:
