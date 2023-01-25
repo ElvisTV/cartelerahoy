@@ -142,7 +142,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               }
                             },
                             child: Text(
-                              'Show Reward',
+                              'Ver Anuncio',
                               style: TextStyle(color: Colors.white),
                             ),
                           ),
