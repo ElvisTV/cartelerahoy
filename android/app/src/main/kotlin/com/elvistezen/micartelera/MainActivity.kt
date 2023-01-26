@@ -1,4 +1,4 @@
-package com.example.micartelera
+package com.elvistezen.micartelera
 
 import io.flutter.embedding.android.FlutterActivity
 
