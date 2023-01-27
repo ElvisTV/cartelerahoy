@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:micartelera/providers/movies_provider.dart';
+import '../search/search_delegate.dart';
 import 'package:micartelera/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
@@ -111,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
           actions: [
             IconButton(
               icon: const Icon(Icons.search_outlined),
-              onPressed: () {},
+              onPressed: () => showSearch(context: context, delegate: MovieSearchDelegate())
             )
           ]
         ),
