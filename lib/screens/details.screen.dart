@@ -24,7 +24,7 @@ class DetailsScreen extends StatelessWidget {
               _PosterAndTitle(movie),
               _Overview(movie),
               _Overview(movie),
-              _Overview(movie),
+              _Overview(movie),              
               CastingCards(movie.id),
             ]
                
@@ -34,9 +34,6 @@ class DetailsScreen extends StatelessWidget {
       )
     );        
   }
-
-
-
 }
 
 class _CustomAppBar extends StatelessWidget {
@@ -140,7 +137,6 @@ class _PosterAndTitle extends StatelessWidget {
               ],
             ),
           )
-
         ],
       )
     );
@@ -164,9 +160,6 @@ class _Overview  extends StatelessWidget {
         style: Theme.of(context).textTheme.subtitle1
 
       ),
-
-
-
     );
   }
 }

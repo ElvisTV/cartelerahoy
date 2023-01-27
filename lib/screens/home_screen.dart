@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import 'package:admob_flutter/admob_flutter.dart';
 import 'dart:io';
+import '../share_preferences/preferences.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -84,7 +85,17 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  int _counter = 0;
+  int _almancenado = Preferences.estrellasGanadas;  
 
+  void _incrementCounter() {
+    setState(() {
+      // _counter++;
+      // Preferences.estrellasGanadas = Preferences.estrellasGanadas + _counter;
+      Preferences.estrellasGanadas ++;
+      _almancenado = Preferences.estrellasGanadas;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -93,10 +104,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
     getmuestra(moviesProvider.popularMovies.length.toInt());
 
-
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Peliculas en cines'),
+          title: const Text('Catalogo de Películas'),
           elevation: 0,
           actions: [
             IconButton(
@@ -107,10 +117,50 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: SingleChildScrollView(
             child: Column(
-              children: [
+              children: [               
                 //Tarjetas principales
                 CardSwiper(movies: moviesProvider.OnDisplayMovies),
-
+                  Text(
+                  'Estrellas Ganadas',
+                  style: TextStyle(
+                    fontSize: 20, 
+                    fontStyle: FontStyle.normal,
+                    color: Color.fromARGB(255, 255, 0, 0)
+                  )
+                ),
+                Text(
+                  // '$_counter',
+                  '$_almancenado',
+                  style: TextStyle(
+                    fontSize: 20, 
+                    fontStyle: FontStyle.normal,
+                    color: Color.fromARGB(255, 140, 0, 255)
+                  )
+                ),
+                Row(         
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,         
+                  children: <Widget>[    
+                    Icon(
+                      Icons.star,
+                      color: Color.fromARGB(255, 255, 183, 0),
+                      size: 30,          
+                    ),    
+                    Icon(
+                      Icons.star,
+                      color: Color.fromARGB(255, 255, 183, 0),
+                      size: 50,  
+                                      
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Color.fromARGB(255, 255, 183, 0),
+                      size: 30,                  
+                    ),
+                  ],
+                  
+                ),
+                
                 //Slider de Peliculas
                 MovieSlider(
                   movies: moviesProvider.popularMovies,
@@ -124,7 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
        bottomNavigationBar: Builder(
             builder: (BuildContext context) {
               return Container(
-                color: Color.fromARGB(255, 84, 228, 13),
+                color: Color.fromARGB(255, 228, 13, 13),
                 child: SafeArea(
                   child: SizedBox(
                     height: 60,
@@ -137,6 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
                            onPressed: () async {
                               if (await rewardAd.isLoaded) {
                                 rewardAd.show();
+                                _incrementCounter();
                               } else {
                                 showSnackBar('Reward ad is still loading...');
                               }
@@ -159,12 +210,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-
 String? getRewardBasedVideoAdUnitId() {
   if (Platform.isIOS) {
     return 'ca-app-pub-3940256099942544/1712485313';
   } else if (Platform.isAndroid) {
-    return 'ca-app-pub-9639991028205856/5723334463';
+    return 'ca-app-pub-3940256099942544/5224354917';
   }
   return null;
 }

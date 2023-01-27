@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:micartelera/providers/movies_provider.dart';
 import 'package:micartelera/screens/screens.dart';
+import 'package:micartelera/share_preferences/preferences.dart';
 import 'package:provider/provider.dart';
 
 import 'dart:io';
@@ -10,8 +11,9 @@ import 'package:flutter/material.dart';
 
 
 // void main() => runApp(AppState());
-void main() {
+void main() async{  
   WidgetsFlutterBinding.ensureInitialized();
+  await Preferences.init();
   Admob.initialize();
   runApp(const AppState());
 }
@@ -45,7 +47,7 @@ class MyApp extends StatelessWidget {
       },
       theme: ThemeData.light().copyWith(
         appBarTheme: const AppBarTheme(
-          color: Colors.indigo
+          color: Color.fromARGB(255, 255, 0, 0)
         )
       )
     );

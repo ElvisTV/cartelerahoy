@@ -40,6 +40,7 @@ dependencies:
   http: ^0.13.5
   provider: ^6.0.3
   admob_flutter: ^3.0.0
+  shared_preferences: ^2.0.17
 
 dev_dependencies:
   flutter_test:
