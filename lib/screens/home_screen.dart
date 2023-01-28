@@ -219,7 +219,7 @@ String? getRewardBasedVideoAdUnitId() {
   if (Platform.isIOS) {
     return 'ca-app-pub-3940256099942544/1712485313';
   } else if (Platform.isAndroid) {
-    return 'ca-app-pub-9639991028205856/1359857122';
+    return 'ca-app-pub-9639991028205856/4389361059';
   }
   return null;
 }
