@@ -38,7 +38,7 @@ class _MovieSliderState extends State<MovieSlider> {
     return Container(
       width: double.infinity,
       height: 260,
-      color: Colors.red,
+      color: Color.fromARGB(255, 0, 255, 128),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start, 
         children: [
@@ -76,7 +76,7 @@ class _MoviesPoster extends StatelessWidget {
     return Container(
       width: 130,
       height: 160,
-      color: Colors.green,
+      color: Color.fromARGB(255, 0, 255, 128),
       margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       child: Column(
         // ignore: prefer_const_literals_to_create_immutables

@@ -34,7 +34,7 @@ class CastingCards extends StatelessWidget {
             margin: EdgeInsets.only(bottom: 30),
             width: double.infinity,
             height: 200,
-            color: Colors.red,
+            color: Color.fromARGB(255, 0, 255, 225),
             child: ListView.builder(
                 itemCount: 10,
                 scrollDirection: Axis.horizontal,
@@ -59,7 +59,7 @@ class _CastCard extends StatelessWidget {
         margin: EdgeInsets.symmetric(horizontal: 10),
         width: 110,
         height: 150,
-        color: Colors.green,
+        color: Color.fromARGB(255, 0, 255, 225),
         child: Column(
           children: [
             ClipRRect(

@@ -39,16 +39,20 @@ class _HomeScreenState extends State<HomeScreen> {
     AdmobAdEvent event, Map<String, dynamic>? args, String adType) {
     switch (event) {
       case AdmobAdEvent.loaded:
-        showSnackBar('New Admob $adType Ad loaded!');
+        // showSnackBar('New Admob $adType Ad loaded!');
+        showSnackBar('Bienvenido a PelisHoy');
         break;
       case AdmobAdEvent.opened:
-        showSnackBar('Admob $adType Ad opened!');
+        // showSnackBar('Admob $adType Ad opened!');
+        showSnackBar('Gracias por ganar estrellas');
         break;
       case AdmobAdEvent.closed:
-        showSnackBar('Admob $adType Ad closed!');
+        showSnackBar('Sigue ganando estrellas');
         break;
       case AdmobAdEvent.failedToLoad:
-        showSnackBar('Admob $adType failed to load. :(');
+        // showSnackBar('Admob $adType failed to load. :(');
+        showSnackBar('PelisHoy se actualizará');
+
         break;
       case AdmobAdEvent.rewarded:
         showDialog(
@@ -215,7 +219,7 @@ String? getRewardBasedVideoAdUnitId() {
   if (Platform.isIOS) {
     return 'ca-app-pub-3940256099942544/1712485313';
   } else if (Platform.isAndroid) {
-    return 'ca-app-pub-3940256099942544/5224354917';
+    return 'ca-app-pub-9639991028205856/1359857122';
   }
   return null;
 }
