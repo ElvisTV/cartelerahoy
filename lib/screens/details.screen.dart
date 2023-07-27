@@ -13,7 +13,7 @@ class DetailsScreen extends StatelessWidget {
     // Por Hacer: Cambiar luego por una instancia de movie
 
     final Movie movie = ModalRoute.of(context)!.settings.arguments as Movie;
-    print(movie.title);
+    print('elvis '+movie.title);
 
    return   Scaffold(
       body: CustomScrollView  (
